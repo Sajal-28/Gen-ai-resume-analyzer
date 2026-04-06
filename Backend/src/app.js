@@ -1,7 +1,13 @@
 const express = require('express')
-const app = express();
 const cookie = require('cookie-parser')
+const cors = require('cors')
 
+const app = express();
+
+app.use(cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true
+}))
 app.use(express.json())
 app.use(cookie())
 
