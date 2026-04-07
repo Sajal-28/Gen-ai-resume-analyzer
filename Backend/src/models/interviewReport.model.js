@@ -5,7 +5,7 @@ const technicalQuestionSchema = new mongoose.Schema({
         type: String,
         required: [true, "Technical question is required"]
     },
-    intension: {
+    intention: {
         type: String,
         required: [true, "Intension is required"]
     },
@@ -15,12 +15,12 @@ const technicalQuestionSchema = new mongoose.Schema({
     }
 }, { _id: false })
 
-const behaviouralQuestionSchema = new mongoose.Schema({
+const behavioralQuestionsSchema = new mongoose.Schema({
     question: {
         type: String,
         required: [true, "Technical question is required"]
     },
-    intension: {
+    intention: {
         type: String,
         required: [true, "Intension is required"]
     },
@@ -44,7 +44,7 @@ const skillGapSchema = new mongoose.Schema({
     _id: false
 })
 
-const preprationPlanSchema = new mongoose.Schema({
+const preparationPlanSchema = new mongoose.Schema({
     day: {
         type: Number,
         required: [true, "Day is required"]
@@ -76,9 +76,9 @@ const interviewReportSchema = new mongoose.Schema({
         max: 100
     },
     technicalQuestions: [technicalQuestionSchema],
-    behaviouralQuestions: [behaviouralQuestionSchema],
+    behavioralQuestions: [behavioralQuestionsSchema],
     skillGaps: [skillGapSchema],
-    preprationPlan: [preprationPlanSchema],
+    preparationPlan: [preparationPlanSchema],
 
     user: {
         type: mongoose.Schema.Types.ObjectId,
