@@ -20,6 +20,9 @@ const interviewRouter = require("./routes/interview.routes")
 app.use("/api/auth", authRouter)
 app.use("/api/interview", interviewRouter)
 
-
+/* Dumy Route For "/" Page */
+app.get("/", (req, res) => {
+    res.send("Ai-Resume-Analzer is up and running")
+})
 
 module.exports = app
