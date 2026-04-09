@@ -3,11 +3,15 @@ const cookieParser = require("cookie-parser")
 const cors = require("cors")
 
 const app = express()
+const allowedOrigins = [
+    process.env.CLIENT_URL,
+    "http://localhost:5173"
+].filter(Boolean)
 
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: process.env.CLIENT_URL,
+    origin: allowedOrigins,
     credentials: true
 }))
 
